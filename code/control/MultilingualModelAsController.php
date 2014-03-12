@@ -26,6 +26,10 @@ class MultilingualModelAsController extends ModelAsController {
             return $this->response;
         }else {
             $locale=i18n::get_locale_from_lang($request->param('Language'));
+            $locale=i18n::get_locale_from_lang($request->param('Language'));
+            if ($locale == 'pt_BR') {
+                $locale = 'pt_PT';
+            }            
         }
         
         if(in_array($locale, Translatable::get_allowed_locales())) {
